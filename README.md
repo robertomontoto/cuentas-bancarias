@@ -43,7 +43,7 @@ Y así con cada tipo de cuenta. Considerar los recargos establecidos por la cons
 
 ### Material proporcionado
 
-Se otorga la implementación de la clase `Cuenta`, la cual es abstracta y servirá para que modeles la herencia. La misma responde a los métodos `depositar(Double):void` y `extraer(Double):void`.  
+Se otorga la implementación de la clase `AbstractCuenta`, la cual es abstracta y servirá para que modeles la herencia. La misma responde a los métodos `depositar(Double):void` y `extraer(Double):void`.  
 Adicionalmente se proporcionan las clases `CuentaSueldo`, `CajaAhorros` y `CuentaCorriente`. Parte del trabajo implica que las completes para resolver el ejercicio según las reglas de negocio establecidas.
 
 También se te proveerá un *test* (dentro de la clase `CuentaTests`) a modo de testigo, probando el caso proporcionado como ejemplo líneas más arriba. Idealmente deberías hacer crecer esas pruebas, o agregar las tuyas propias para asegurarte de que tu solución es correcta.

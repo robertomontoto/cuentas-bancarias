@@ -15,12 +15,12 @@ public class CuentaTests {
 				4000.0, cuenta.getSaldo(), 0.0);
 
 		cuenta.extraer(500.0);
-		
+	
 		Assert.assertEquals(
 				"al extraer $ 500.0 de una cuenta con $ 4000.0 se obtienen $ 3500.0",
 				3500.0, cuenta.getSaldo(), 0.0);
 	}
-	
+
 	@Test(expected=RuntimeException.class)
 	public void queVerifiqueLaConsignaException() {
 		CuentaSueldo cuenta = new CuentaSueldo();
@@ -28,5 +28,5 @@ public class CuentaTests {
 
 		cuenta.extraer(4000.0);
 	}
-	
+
 }
