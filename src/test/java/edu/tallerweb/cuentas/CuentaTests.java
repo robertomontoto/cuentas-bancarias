@@ -21,7 +21,7 @@ public class CuentaTests {
 				3500.0, cuenta.getSaldo(), 0.0);
 	}
 
-	@Test(expected=RuntimeException.class)
+	@Test(expected=CuentaBancariaException.class)
 	public void queVerifiqueLaConsignaException() {
 		CuentaSueldo cuenta = new CuentaSueldo();
 		cuenta.depositar(3500.0);

@@ -19,6 +19,15 @@ package edu.tallerweb.cuentas;
 public class CuentaCorriente {
 
 	/**
+	 * Toda cuenta corriente se inicia con un límite total
+	 * para el descubierto.
+	 * @param descubiertoTotal
+	 */
+	public CuentaCorriente(final Double descubiertoTotal) {
+		throw new RuntimeException("No implementado aún");
+	}
+	
+	/**
 	 * Todo depósito deberá cubrir primero el descubierto,
 	 * si lo hubiera, y luego contar para el saldo de la
 	 * cuenta.
@@ -44,6 +53,14 @@ public class CuentaCorriente {
 	 * @return el saldo de la cuenta
 	 */
 	public Double getSaldo() {
+		throw new RuntimeException("No implementado aún");
+	}
+	
+	/**
+	 * Permite saber el saldo en descubierto
+	 * @return el descubierto de la cuenta
+	 */
+	public Double getDescubierto() {
 		throw new RuntimeException("No implementado aún");
 	}
 
