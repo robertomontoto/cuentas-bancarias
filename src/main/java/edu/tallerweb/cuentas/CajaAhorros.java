@@ -5,8 +5,8 @@ package edu.tallerweb.cuentas;
  * dinero se cobre un costo adicional por extracción de $ 6
  */
 public class CajaAhorros extends AbstractCuenta {
-	private double sumCajaAhorro = 0;
-	private int contadorExtracciones = 0;
+	private double sumCajaAhorro = 0.0;
+	private int contadorExtracciones = 0.0;
 
 	/* constructor para la Caja de Ahorro sin parámetros */
 	public CajaAhorros() {
@@ -53,7 +53,7 @@ public class CajaAhorros extends AbstractCuenta {
 	 * @return el saldo de la cuenta
 	 */
 	public Double getSaldo() {
-		if (sumCajaAhorro < 0) {
+		if (sumCajaAhorro < 0.0) {
 			throw new RuntimeException(
 					"El saldo de su caja de Ahorro no puede ser negativo");
 		}

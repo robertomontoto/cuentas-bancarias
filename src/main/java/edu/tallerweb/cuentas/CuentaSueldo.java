@@ -22,7 +22,7 @@ public class CuentaSueldo extends AbstractCuenta {
 
 	@Override
 	public void depositar(final Double monto) {
-		if (monto < 0) {
+		if (monto < 0.0) {
 			throw new RuntimeException(
 					"El monto a depositar no puede ser menor a 0");
 		}

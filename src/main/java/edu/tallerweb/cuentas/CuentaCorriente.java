@@ -47,7 +47,7 @@ public class CuentaCorriente extends AbstractCuenta {
 		if (sumDescubierto == 0.0) {
 			sumCuentaCorriente += monto;
 		}
-		if (sumDescubierto > 0) {
+		if (sumDescubierto > 0.0) {
 			sumDescubierto -= monto;
 		} else {
 			sumCuentaCorriente += sumDescubierto * (-1);
