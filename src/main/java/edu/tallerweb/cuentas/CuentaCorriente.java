@@ -67,7 +67,7 @@ public class CuentaCorriente extends AbstractCuenta {
 	public void extraer(final Double monto) {
 		if (sumCuentaCorriente + (descubiertoTotal + (descubiertoTotal * 0.05)) < monto) {
 			throw new RuntimeException(
-					"No se puede extraer dinero mayor al disponible en la cuenta junto con el descubierto ");
+					"No se puede extraer dinero mayor al disponible en su cuenta junto con el descubierto ");
 		}
 		if (monto > sumCuentaCorriente) {
 			/* Lo que le debo al banco */
@@ -86,6 +86,10 @@ public class CuentaCorriente extends AbstractCuenta {
 	 * @return el saldo de la cuenta
 	 */
 	public Double getSaldo() {
+		if (sumCuentaCorriente < 0) {
+			throw new RuntimeException(
+					"El saldo de su Cuenta Corrriente no puede ser negativo");
+		}
 		return sumCuentaCorriente;
 	}
 

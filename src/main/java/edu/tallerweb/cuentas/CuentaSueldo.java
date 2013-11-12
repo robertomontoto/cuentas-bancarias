@@ -40,7 +40,7 @@ public class CuentaSueldo extends AbstractCuenta {
 	public void extraer(final Double monto) {
 		if (monto > sumCuentaSueldo) {
 			throw new RuntimeException(
-					"El saldo a extrear de su cuenta debe ser menor a lo que tiene depositado");
+					"El saldo a extrear de su cuenta no debe ser mayor a lo que tiene depositado");
 		}
 		sumCuentaSueldo -= monto;
 	}
@@ -51,8 +51,9 @@ public class CuentaSueldo extends AbstractCuenta {
 	 * @return el saldo de la cuenta
 	 */
 	public Double getSaldo() {
-		if (sumCuentaSueldo == 0) {
-			throw new RuntimeException("El saldo de su cuenta es igual a cero");
+		if (sumCuentaSueldo < 0) {
+			throw new RuntimeException(
+					"El saldo de su cuenta Sueldo no puede ser negativo");
 		}
 		return sumCuentaSueldo;
 

@@ -21,7 +21,7 @@ public class CajaAhorros extends AbstractCuenta {
 	 */
 	@Override
 	public void depositar(final Double monto) {
-		if (monto == 0.0) {
+		if (monto < 0.0) {
 			throw new RuntimeException(
 					"El monto a depositar no puede ser menor a cero");
 		}
@@ -53,9 +53,9 @@ public class CajaAhorros extends AbstractCuenta {
 	 * @return el saldo de la cuenta
 	 */
 	public Double getSaldo() {
-		if (sumCajaAhorro == 0) {
+		if (sumCajaAhorro < 0) {
 			throw new RuntimeException(
-					"El saldo de su caja de Ahorro es igual a cero");
+					"El saldo de su caja de Ahorro no puede ser negativo");
 		}
 		return sumCajaAhorro;
 	}
