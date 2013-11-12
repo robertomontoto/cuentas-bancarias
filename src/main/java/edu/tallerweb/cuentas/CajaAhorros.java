@@ -43,7 +43,7 @@ public class CajaAhorros extends AbstractCuenta {
 		sumCajaAhorro -= monto;
 		contadorExtracciones++;
 		if (contadorExtracciones > 5) {
-			sumCajaAhorro -= 6;
+			sumCajaAhorro -=6;
 		}
 	}
 
