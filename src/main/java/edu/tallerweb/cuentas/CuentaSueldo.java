@@ -1,35 +1,60 @@
 package edu.tallerweb.cuentas;
 
 /**
- * Es el tipo de cuenta más simple, ya que se rige por la premisa
- * de que en tanto y en cuanto se tenga tanto o más dinero en
- * cuenta del que se quiere extraer, la operación se debe efectuar
- * correctamente.
+ * Es el tipo de cuenta m�s simple, ya que se rige por la premisa de que en
+ * tanto y en cuanto se tenga tanto o m�s dinero en cuenta del que se quiere
+ * extraer, la operaci�n se debe efectuar correctamente.
  */
-public class CuentaSueldo {
+public class CuentaSueldo extends AbstractCuenta {
+	private double sumCuentaSueldo = 0.0;
 
-	/**
-	 * No hay reglas adicionales para el depósito
-	 * @param monto a depositar
-	 */
-	public void depositar(final Double monto) {
-		throw new RuntimeException("No implementado aún");
+	/* Constructor para la Cuenta Sueldo */
+	public CuentaSueldo() {
+
 	}
 
 	/**
-	 * No hay reglas adicionales para la extracción
-	 * @param monto a extraer
+	 * No hay reglas adicionales para el dep�sito
+	 *
+	 * @param monto
+	 *            a depositar
 	 */
+
+	@Override
+	public void depositar(final Double monto) {
+		if (monto < 0) {
+			throw new RuntimeException(
+					"El monto a depositar no puede ser menor a 0");
+		}
+		sumCuentaSueldo += monto;
+	}
+
+	/**
+	 * No hay reglas adicionales para la extracci�n
+	 *
+	 * @param monto
+	 *            a extraer
+	 */
+
+	@Override
 	public void extraer(final Double monto) {
-		throw new RuntimeException("No implementado aún");
+		if (monto > sumCuentaSueldo) {
+			throw new RuntimeException(
+					"El saldo a extrear de su cuenta debe ser menor a lo que tiene depositado");
+		}
+		sumCuentaSueldo -= monto;
 	}
 
 	/**
 	 * Permite saber el saldo de la cuenta
+	 *
 	 * @return el saldo de la cuenta
 	 */
 	public Double getSaldo() {
-		throw new RuntimeException("No implementado aún");
-	}
+		if (sumCuentaSueldo == 0) {
+			throw new RuntimeException("El saldo de su cuenta es igual a cero");
+		}
+		return sumCuentaSueldo;
 
+	}
 }
