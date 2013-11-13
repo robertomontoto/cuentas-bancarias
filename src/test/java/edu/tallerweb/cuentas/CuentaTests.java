@@ -6,7 +6,7 @@ import org.junit.Test;
 public class CuentaTests {
 
 	@Test
-	public void queVerifiqueCuentaSueldo() {
+	public void queVerifiqueLaConsigna() {
 		CuentaSueldo cuenta = new CuentaSueldo();
 		cuenta.depositar(4000.0);
 
@@ -22,7 +22,7 @@ public class CuentaTests {
 	}
 
 	@Test(expected = CuentaBancariaException.class)
-	public void queVerifiqueExceptionenCuentaSueldo() {
+	public void queVerifiqueLaConsignaException() {
 		CuentaSueldo cuenta = new CuentaSueldo();
 		cuenta.depositar(3500.0);
 		cuenta.extraer(4000.0);
@@ -57,7 +57,7 @@ public class CuentaTests {
 	}
 
 	@Test
-	public void queverifiqueCuentaCorriente() {
+	public void queVerifiqueCuentaCorriente() {
 		CuentaCorriente cuenta = new CuentaCorriente(150.00);
 		cuenta.depositar(100.00);
 		cuenta.extraer(200.00);
