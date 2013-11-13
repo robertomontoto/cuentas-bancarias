@@ -6,12 +6,7 @@ package edu.tallerweb.cuentas;
  */
 public class CajaAhorros extends AbstractCuenta {
 	private double sumCajaAhorro = 0.0;
-	private int contadorExtracciones = 0.0;
-
-	/* constructor para la Caja de Ahorro sin parámetros */
-	public CajaAhorros() {
-
-	}
+	private double contadorExtracciones = 0.0;
 
 	/**
 	 * No hay reglas adicionales para el depósito

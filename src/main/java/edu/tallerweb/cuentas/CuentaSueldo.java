@@ -8,11 +8,6 @@ package edu.tallerweb.cuentas;
 public class CuentaSueldo extends AbstractCuenta {
 	private double sumCuentaSueldo = 0.0;
 
-	/* Constructor para la Cuenta Sueldo */
-	public CuentaSueldo() {
-
-	}
-
 	/**
 	 * No hay reglas adicionales para el depósito
 	 *
