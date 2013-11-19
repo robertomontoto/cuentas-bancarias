@@ -41,7 +41,7 @@ public class CuentaCorriente extends AbstractCuenta {
 	@Override
 	public void depositar(final Double monto) {
 		if (monto < 0.0) {
-			throw new RuntimeException(
+			throw new CuentaBancariaException(
 					"El monto a depositar no puede ser menor a cero");
 		}
 		if (sumDescubierto == 0.0) {
@@ -66,7 +66,7 @@ public class CuentaCorriente extends AbstractCuenta {
 	@Override
 	public void extraer(final Double monto) {
 		if (sumCuentaCorriente + (descubiertoTotal + (descubiertoTotal * 0.05)) < monto) {
-			throw new RuntimeException(
+			throw new CuentaBancariaException(
 					"No se puede extraer dinero mayor al disponible en su cuenta junto con el descubierto ");
 		}
 		if (monto > sumCuentaCorriente) {
@@ -87,7 +87,7 @@ public class CuentaCorriente extends AbstractCuenta {
 	 */
 	public Double getSaldo() {
 		if (sumCuentaCorriente < 0) {
-			throw new RuntimeException(
+			throw new CuentaBancariaException(
 					"El saldo de su Cuenta Corrriente no puede ser negativo");
 		}
 		return sumCuentaCorriente;
